@@ -24,5 +24,3 @@ const keys = document.querySelectorAll(".key"); //find all elements with '.keys'
 keys.forEach(key => key.addEventListener('transitionend', removeTransition)); 
 
 window.addEventListener("keydown", playSound);
-
-

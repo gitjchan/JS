@@ -1,0 +1,38 @@
+html {
+  background: black;
+  --base: #ffc600;
+  --spacing: 10px;
+  --blur: 10px; }
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: impact;
+  font-size: 20pt;
+  color: white; }
+
+.container {
+  height: 100vh;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.hl {
+  color: var(--base);
+  letter-spacing: var(--spacing);
+  -webkit-filter: blur(var(--blur));
+  filter: blur(var(--blur)); }
+
+.controls {
+  width: 9%;
+  position: absolute;
+  color: var(--base);
+  float: left; }
+
+/*# sourceMappingURL=style.css.map */

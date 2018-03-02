@@ -1,0 +1,35 @@
+@import "tools"
+
+
+html 
+  background: black
+  --base: #ffc600
+  --spacing: 10px
+  --blur: 10px
+
+body,html 
+  margin: 0
+  padding: 0
+  font: 
+    family: impact
+    size: 20pt
+  color: white
+
+.container
+  height: 100vh
+  +display(flex)
+  justify-content: center
+  align-items: center 
+
+.hl
+  color: var(--base)
+  letter-spacing: var(--spacing)
+  +filter(blur(var(--blur)))
+
+
+.controls
+  width: 9%
+  +position(absolute)
+  color: var(--base)
+  float: left
+

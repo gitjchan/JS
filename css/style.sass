@@ -1,50 +1,82 @@
+
+@import "tools"
+
+$blue: #336688
+$white: #fff
+$orange: rgba(252, 152, 3, 1)
+
 html 
   font-size: 10px
-  background: url(../img/dom.jpg) center center
-  background-size: cover
+  background: $orange
 
 body,html 
   margin: 0
   padding: 0
   font-family: sans-serif
 
-
-.keys 
-  display: flex
-  flex: 1
-  min-height: 100vh
-  align-items: center
+.outerContainer 
+  +display(flex)
   justify-content: center
+  align-items: center
+  margin: 0 auto
+  height: 99vh
+  width: 100%
+
+  .innerContainer
+    width: 100%
+    +display(flex)
+    flex-wrap: wrap
+    justify-content: center
+    align-items: center
+    overflow: hidden
+    // Evenly ordered projects
+    & [class^="project"]:nth-child(even) .thumb-overlay
+      right: 100%
+    // Oddly ordered projects
+    & [class^="project"]:nth-child(odd) .thumb-overlay
+      left: 100% 
+
+    [class^="project"]
+      +position(relative)
+      background: 
+        size: cover
+        position: center center
+        repeat: no-repeat
+      height: 200px
+      width: 300px
+      +display(flex)
+      justify-content: center
+      align-items: center
+      cursor: pointer
+      &:nth-child(odd):hover .thumb-overlay  
+        opacity: 1
+        left: 0%
+      &:nth-child(even):hover .thumb-overlay  
+        opacity: 1
+        right: 0%
 
 
-.key 
-  border: .4rem solid white
-  border-radius: .5rem
-  margin: 1rem
-  font-size: 1.5rem
-  padding: 1rem .5rem
-  transition: all .07s ease
-  width: 10rem
-  text-align: center
-  color: white
-  background: rgba(0,0,0,0.4)
-  text-shadow: 0 0 .5rem black
+      &:nth-child(1)
+        background: 
+          image: url(../img/proj_Drumkit.jpg)
 
+      &:nth-child(2)
+        background: 
+          image: url(../img/proj_Clock.jpg)
 
-.playing 
-  transform: scale(1.1)
-  border-color: #F8BA06 //gold
-  box-shadow: 0 0 1rem #ffc600
+      &:nth-child(3)
+        background: 
+          image: url(../img/proj_Variables.jpg)    
 
-
-kbd 
-  display: block
-  font-size: 4rem
-
-
-.sound 
-  font-size: 1.2rem
-  text-transform: uppercase
-  letter-spacing: .1rem
-  color: #ffc600
-
+      .thumb-overlay
+        +transition(200ms)
+        opacity: 0
+        +position(absolute, 25% 0 25% 0)
+        background: fade-out($orange, 0)
+        +display(flex)
+        +justify-content(space-around)
+        +align-items(center)
+        color: $white
+        font:
+          size: 30pt
+  
