@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Weight Converter</title>
+</head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<style>
+	body {
+		margin-top: 100px;
+		background: #333;
+		color: white;
+	}
+	.card {
+		color: #333;
+		text-align: center;
+	}
+</style>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 offset-md-3">
+				<h1 class="display-4 text-center">Weight Converter</h1>
+				<form>
+					<div class="form-group">
+						<input id="lbsInput" type="number" class="form-control form control-lg" placeholder="Enter Pounds...">
+					</div>
+				</form>
+				<div id="output">
+					<div class="card mb-2">
+						<div class="card-block">
+							<h4>Grams:</h4>
+							<div id="gramsOutput"></div>
+						</div>
+					</div>
+					<div class="card mb-2">
+						<div class="card-block">
+							<h4>KiloGrams:</h4>
+							<div id="kgOutput"></div>
+						</div>
+					</div>
+					<div class="card mb-2">
+						<div class="card-block">
+							<h4>Ounces:</h4>
+							<div id="ozOutput"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		document.getElementById('output').style.visibility = 'hidden';
+		// Get input element
+		var lbsInput = document.getElementById('lbsInput');
+
+		// Add event listener
+		lbsInput.addEventListener('input',function(e){
+			document.getElementById('output').style.visibility = '';
+			var lbs = e.target.value;
+
+			// Get grams
+			document.getElementById('gramsOutput').innerHTML = (lbs/0.0022046).toFixed(2);
+			
+			// Get Kilograms
+			document.getElementById('kgOutput').innerHTML = (lbs/2.2046).toFixed(2);
+
+			// Get Ounces
+			document.getElementById('ozOutput').innerHTML = (lbs * 2.20046).toFixed(2)
+
+		})
+
+	</script>
+</body>
+</html>
