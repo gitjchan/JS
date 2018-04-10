@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css">
+	<title>Filter Contacts</title>
+</head>
+<body>
+	<div class="container">
+		<h1 class="center-align">
+			Filter Contacts
+		</h1>
+		<input type="text" id="filterInput" placeholder="Search names...">
+		<ul id="names" class="collection with-header">
+			<li class="collection-header">
+				<h5>A</h5>
+			</li>
+			<li class="collection-item">
+				<a href="#">Anna</a>
+			</li>
+			<li class="collection-item">
+				<a href="#">Adam</a>
+			</li>
+			<li class="collection-item">
+				<a href="#">Alan</a>
+			</li>
+			<li class="collection-header">
+				<h5>B</h5>
+			</li>
+			<li class="collection-item">
+				<a href="#">Bob</a>
+			</li>
+			<li class="collection-item">
+				<a href="#">Bonnie</a>
+			</li>
+			<li class="collection-item">
+				<a href="#">Bill</a>
+			</li>
+			<li class="collection-header">
+				<h5>C</h5>
+			</li>
+			<li class="collection-item">
+				<a href="#">Cathy</a>
+			</li>
+			<li class="collection-item">
+				<a href="#">Cassie</a>
+			</li>
+			<li class="collection-item">
+				<a href="#">Cody</a>
+			</li>
+			<li class="collection-header">
+				<h5>D</h5>
+			</li>
+			<li class="collection-item">
+				<a href="#">Dorothy</a>
+			</li>
+			<li class="collection-item">
+				<a href="#">David</a>
+			</li>
+			<li class="collection-item">
+				<a href="#">Damon</a>
+			</li>
+		</ul>
+	</div>
+
+	<script>
+		// Get input element
+		var filterInput = document.getElementById('filterInput');
+
+		filterInput.addEventListener('keyup', inputText);
+
+		function inputText() {
+			var inputValue = filterInput.value.toUpperCase();
+			
+			// Get 'names' ul
+			var ul = document.getElementById('names');
+			// Get lis from ul
+			var li = ul.querySelectorAll('li.collection-item');
+
+			// Loop through collection li's
+			li.forEach(function(element) {
+				var a = element.getElementsByTagName('a')[0];
+				// If matched
+				if (a.innerHTML.toUpperCase().indexOf(inputValue)) {
+					element.style.display = 'none';
+				} else {
+					element.style.display = '';
+				}
+			})
+		}
+	</script>
+</body>
+</html>
