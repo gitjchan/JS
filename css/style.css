@@ -70,6 +70,10 @@ body, html {
         background-image: url(../img/proj_uglyTodoList.jpg); }
       .outerContainer .innerContainer [class^="project"]:nth-child(5) {
         background-image: url(../img/proj_Filter.jpg); }
+      .outerContainer .innerContainer [class^="project"]:nth-child(6) {
+        background-image: url(../img/proj_Converter.jpg); }
+      .outerContainer .innerContainer [class^="project"]:nth-child(7) {
+        background-image: url(../img/proj_Movies.jpg); }
       .outerContainer .innerContainer [class^="project"] .thumb-overlay {
         -webkit-transition: 200ms;
         -moz-transition: 200ms;
