@@ -1,0 +1,33 @@
+div .container {
+  margin: 30px;
+  padding: 10px; }
+
+body {
+  background-color: #1abc9c;
+  color: white;
+  cursor: default; }
+
+h1 {
+  padding: 20px; }
+
+h2 {
+  text-align: center; }
+
+i {
+  font-size: 50px;
+  color: yellow;
+  width: 100%;
+  margin-top: 10px;
+  text-align: center; }
+
+#main {
+  margin: 20px auto;
+  height: 500px; }
+
+.card {
+  margin: 50px 2px 0 2px;
+  width: 12rem;
+  background-color: #1abc9c;
+  border: 2px white solid; }
+
+/*# sourceMappingURL=style.css.map */

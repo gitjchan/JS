@@ -77,7 +77,7 @@ function getMovie() {
 					</div>
 					`;
 			document.getElementById("movie").innerHTML = output;
-			console.log(response);
+
 	    }
 	};
 	xhttp.open("GET", `https://api.themoviedb.org/3/movie/${movieId}?api_key=98325a9d3ed3ec225e41ccc4d360c817`, true);
