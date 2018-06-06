@@ -298,7 +298,7 @@ function getForeCast(location) {
 
 		};
 	};
-	xhttp.open("GET", `http://api.openweathermap.org/data/2.5/forecast?q=${location}&APPID=5c23dc0ca2987a175de9fe08f14875c7`, true);
+	xhttp.open("GET", `https://api.openweathermap.org/data/2.5/forecast?q=${location}&APPID=5c23dc0ca2987a175de9fe08f14875c7`, true);
 	xhttp.send();
 };
 
@@ -312,7 +312,7 @@ function getCurrentWeather(location) {
 
 		};
 	};
-	xhttp.open("GET", `http://api.openweathermap.org/data/2.5/weather?q=${location}&APPID=5c23dc0ca2987a175de9fe08f14875c7`, true);
+	xhttp.open("GET", `https://api.openweathermap.org/data/2.5/weather?q=${location}&APPID=5c23dc0ca2987a175de9fe08f14875c7`, true);
 	xhttp.send();
 };
 
